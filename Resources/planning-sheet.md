@@ -30,6 +30,11 @@ winning combinations
 - 159
 - 357
 
+- check player array against win combinations
+- update match array to declare winner 
+
+- Add logic to not allow clicking on the same box
+- Add draw logic 
 
 
 

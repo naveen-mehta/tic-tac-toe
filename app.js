@@ -1,8 +1,8 @@
 var activePlayer = "Player 1";
 var grid = document.querySelectorAll('.box');
-var player1clicks = [];
-var player2clicks = [];
-var allClicks = []; //tracks clicks for both players 
+var playerOneClicks = [];
+var playerTwoClicks = [];
+var allClicks = [];  
 var matchTracker = [];
 var winCombinations = [
     [1, 2, 3],
@@ -16,19 +16,25 @@ var winCombinations = [
 ];
 
 function handleClick(event) {
-    var boxNum = event.target.dataset.id;
+    var boxNum = Number(event.target.dataset.id);
     if (activePlayer == "Player 1") {
         event.target.textContent = "X";
         allClicks.push(boxNum); 
-        player1clicks.push(boxNum);
-        checkWinner(player1clicks);
-        switchActivePlayer("Player 2");
+        playerOneClicks.push(boxNum);
+        if (checkWinner(playerOneClicks).length === 3) {
+            alert ("Player 1 wins");
+        } else {
+            switchActivePlayer("Player 2");
+        }
     } else {
         event.target.textContent = "O";
         allClicks.push(boxNum);
-        player2clicks.push(boxNum);
-        checkWinner(player2clicks);
-        switchActivePlayer("Player 1");
+        playerTwoClicks.push(boxNum);
+        if (checkWinner(playerTwoClicks).length === 3) {
+            alert ("Player 2 wins");
+        } else {
+            switchActivePlayer("Player 1");
+        }
     }
 }
 
@@ -36,7 +42,6 @@ function switchActivePlayer(playerName) {
     activePlayer = playerName;
 }
 
-//event listener to handle user clicks
 for (var i = 0; i < 9; i++) {
     grid[i].addEventListener('click', handleClick);
 }

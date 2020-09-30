@@ -1,13 +1,14 @@
 * {
     box-sizing: border-box;
     font-family: 'Varela Round', sans-serif;
+    color: rgb(50, 55, 63);
     text-align: center;
     margin: 0 auto;
 }
 
 main {
-    max-width: 500px;
-    max-height: 600px;
+    max-width: 501px;
+    max-height: 631px;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -34,16 +35,16 @@ main {
 }
 
 .outer-box1, .outer-box2, .outer-box4, .outer-box5 {
-    border-right: 5px solid green;
-    border-bottom: 5px solid green;
+    border-right: 5px solid rgba(128, 128, 128, 0.178);
+    border-bottom: 5px solid rgba(128, 128, 128, 0.178);
 }
 
-.outer-box3, .outer-box6 {
-    border-bottom: 5px solid green;
+.outer-box3, .outer-box6 {    
+    border-bottom: 5px solid rgba(128, 128, 128, 0.178);
 } 
 
 .outer-box7, .outer-box8 {
-    border-right: 5px solid green;
+    border-right: 5px solid rgba(128, 128, 128, 0.178);
 }
 
 .inner-box {
@@ -52,9 +53,10 @@ main {
     font-size: 130px;
     text-align: center;
     padding: 3%;
+    background: linear-gradient(-45deg, #e7faf059, #fdffff, #e7e9f0);
 }
 
-.reset-btn {
+.reset-btn, .active-player {
     padding: 10px 20px;
     border: none;
     background-color: rgba(68, 189, 38, 0.274);   
@@ -65,5 +67,6 @@ main {
 .reset-btn:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
 
 
