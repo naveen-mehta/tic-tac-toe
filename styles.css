@@ -13,12 +13,13 @@ main {
 
 .game-header {
     margin-top: 50px;
+    padding-top: 12px; 
 }
 
 .active-player {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 21px;
+    margin-top: 10px;
 }
 
 .game-grid {
