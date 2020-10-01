@@ -39,9 +39,32 @@ winning combinations
 
 ** handleWin ** 
 
-- 
+- hide player-container and gameboard 
+- display window with message "Player 1/2 wins. Restarting..." with timeout of 3 seconds
+- reset game: 
+  - clear board
+  - set variables to empty
+    - playerOneClicks
+    - playerTwoClicks
+    - allClicks 
+    - matchTracker  
+- set activePlayer to Player1
 
 
+** handleReset ** -> this can be called on page load and can be called within the
+handleWin function. 
 
+** draw function ** 
+- called in the else block of handleClick
 
+- prevent double click on the same box. use allClicks array to check if the box is clicked. 
 
+- add logic for reset button
+  
+** handleDoubleClick**
+
+- call first at every click
+- return if box is empty
+- call handleHide if not and pass on false as parameter
+- Modify handleHide 
+  - if doubleClick argument is true    

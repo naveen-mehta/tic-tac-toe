@@ -22,27 +22,31 @@ var winCombinations = [
 
 function handleClick(event) {
     var boxNum = Number(event.target.dataset.id);
-    if (activePlayer == "Player 1") {
-        playerOneBtn.classList.remove('active-player');
-        playerTwoBtn.classList.add('active-player');
-        event.target.textContent = "X";
-        allClicks.push(boxNum); 
-        playerOneClicks.push(boxNum);
-        if (checkWinner(playerOneClicks).length === 3) {
-            handleWin(activePlayer);
+    if (handleDoubleClick(event)) {
+        if (activePlayer == "Player 1") {
+            playerOneBtn.classList.remove('active-player');
+            playerTwoBtn.classList.add('active-player');
+            event.target.textContent = "X";
+            allClicks.push(boxNum); 
+            playerOneClicks.push(boxNum);
+            if (checkWinner(playerOneClicks).length === 3) {
+                handleWin(activePlayer);
+            } else {
+                handleDraw();
+                switchActivePlayer("Player 2");
+            }
         } else {
-            switchActivePlayer("Player 2");
-        }
-    } else {
-        playerTwoBtn.classList.remove('active-player');
-        playerOneBtn.classList.add('active-player');
-        event.target.textContent = "O";
-        allClicks.push(boxNum);
-        playerTwoClicks.push(boxNum);
-        if (checkWinner(playerTwoClicks).length === 3) {
-            handleWin(activePlayer);
-        } else {
-            switchActivePlayer("Player 1");
+            playerTwoBtn.classList.remove('active-player');
+            playerOneBtn.classList.add('active-player');
+            event.target.textContent = "O";
+            allClicks.push(boxNum);
+            playerTwoClicks.push(boxNum);
+            if (checkWinner(playerTwoClicks).length === 3) {
+                handleWin(activePlayer);
+            } else {
+                handleDraw();
+                switchActivePlayer("Player 1");
+            }
         }
     }
 }
@@ -80,8 +84,8 @@ function handleReset() {
     hideElements[0].classList.remove('hide-elements');
     hideElements[1].classList.remove('hide-elements');
     userAlerts.textContent = "";
-    document.querySelector('#p2').classList.remove('active-player');
-    document.querySelector('#p1').classList.add('active-player');
+    playerTwoBtn.classList.remove('active-player');
+    playerOneBtn.classList.add('active-player');
     for (var i = 0; i < 9; i++) {
         box[i].textContent = "";
     }
@@ -95,5 +99,36 @@ function handleWin(activePlayer) {
 function handleHide() {
     hideElements[0].classList.add('hide-elements');
     hideElements[1].classList.add('hide-elements');
-    userAlerts.textContent = `${activePlayer} wins. Restarting game...`;
+    if (allClicks.length === 9) {
+        userAlerts.textContent = `It's a draw. Restarting game...`;
+    } else {
+        userAlerts.textContent = `${activePlayer} wins. Restarting game...`;
+    }
+}
+
+function handleDraw() {
+    if (allClicks.length === 9) {
+        handleWin();
+    }   
+}
+
+function handleDoubleClick(event) {
+    if (event.target.textContent === "") {
+        return true;
+    } else {
+        hideElements[0].classList.add('hide-elements');
+        hideElements[1].classList.add('hide-elements');
+        setTimeout(handleDoubleClickMessage, 300);
+        setTimeout(handleShowElements, 2500);
+    }
+}
+
+function handleDoubleClickMessage() {
+    userAlerts.textContent = `This box is already selected. Please select another box...`;
+}
+
+function handleShowElements() {
+    userAlerts.textContent = "";
+    hideElements[0].classList.remove('hide-elements');
+    hideElements[1].classList.remove('hide-elements');
 }
