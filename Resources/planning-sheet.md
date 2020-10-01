@@ -36,6 +36,12 @@ winning combinations
 - Add logic to not allow clicking on the same box
 - Add draw logic 
 
+- Add reset button logic 
+
+- Add player button highlights for active player
+
+
+
 
 
 

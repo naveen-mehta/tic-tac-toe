@@ -18,6 +18,8 @@ var winCombinations = [
 function handleClick(event) {
     var boxNum = Number(event.target.dataset.id);
     if (activePlayer == "Player 1") {
+        document.querySelector('#p1').classList.remove('active-player');
+        document.querySelector('#p2').classList.add('active-player');
         event.target.textContent = "X";
         allClicks.push(boxNum); 
         playerOneClicks.push(boxNum);
@@ -27,6 +29,8 @@ function handleClick(event) {
             switchActivePlayer("Player 2");
         }
     } else {
+        document.querySelector('#p2').classList.remove('active-player');
+        document.querySelector('#p1').classList.add('active-player');
         event.target.textContent = "O";
         allClicks.push(boxNum);
         playerTwoClicks.push(boxNum);
