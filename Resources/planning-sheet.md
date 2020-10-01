@@ -78,5 +78,7 @@ handleWin function.
 - Logic (*)
   - loop through the playerClicks array 
 //box[playerOneClicks[i]-1].classList.add('highlight-winners');
+the -1 is to make sure the index starts from zero. 
+
 
 

@@ -77,6 +77,7 @@ function checkWinner(playerClicks) {
 
 function handleReset() {
     handleRemoveWinComboBgColor();
+    setTimeout(handleRemoveUserAlerts, 200);
     activePlayer = "Player 1";
     playerOneClicks = [];
     playerTwoClicks = [];
@@ -84,7 +85,7 @@ function handleReset() {
     matchTracker = [];
     hideElements[0].classList.remove('hide-elements');
     hideElements[1].classList.remove('hide-elements');
-    userAlerts.textContent = "";
+    // userAlerts.textContent = "";
     playerTwoBtn.classList.remove('active-player');
     playerOneBtn.classList.add('active-player');
     for (var i = 0; i < 9; i++) {
@@ -94,17 +95,19 @@ function handleReset() {
 
 function handleWin(activePlayer) {
     handleAddWinComboBgColor();
-    setTimeout(handleHide, 1500); 
-    setTimeout(handleReset, 3000); 
+    setTimeout(handleHideElements, 2500)
+    setTimeout(handleHide, 4500); 
+    setTimeout(handleReset, 7000); 
 }
 
 function handleHide() {
-    hideElements[0].classList.add('hide-elements');
-    hideElements[1].classList.add('hide-elements');
     if (allClicks.length === 9 && matchTracker.length !== 3) {
         userAlerts.textContent = `It's a draw. Restarting game...`;
+        userAlerts.classList.add('show-elements');
     } else {
+        userAlerts.classList.add('alerts-transition');
         userAlerts.textContent = `${activePlayer} wins. Restarting game...`;
+        userAlerts.classList.add('show-elements');
     }
 }
 
@@ -127,12 +130,18 @@ function handleDoubleClick(event) {
 
 function handleDoubleClickMessage() {
     userAlerts.textContent = `This box is already selected. Please select another box...`;
+    userAlerts.classList.add('show-elements');
 }
 
 function handleShowElements() {
     userAlerts.textContent = "";
     hideElements[0].classList.remove('hide-elements');
     hideElements[1].classList.remove('hide-elements');
+}
+
+function handleHideElements() {
+    hideElements[0].classList.add('hide-elements');
+    hideElements[1].classList.add('hide-elements');
 }
 
 function handleAddWinComboBgColor() {
@@ -147,4 +156,8 @@ function handleRemoveWinComboBgColor() {
     for (var i = 0; i < 9; i++) {
         box[i].classList.remove('highlight-winners');
     }
+}
+
+function handleRemoveUserAlerts() {
+    userAlerts.classList.remove('show-elements');
 }
