@@ -31,7 +31,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 20px;
-    transition: all 1.5s ease-in;
+    transition: all 1s ease-in;
 }
 
 .box {
@@ -59,13 +59,18 @@ main {
     text-align: center;
     padding: 3%;
     background: linear-gradient(-45deg, #e7faf059, #fdffff, #e7e9f0);
-    transition: all 1.5s ease-in;
+    transition: all 1s ease-in;
+}
+
+.inner-box:hover {
+    background-color: grey;
 }
 
 .active-player {
-    background-color: #10ff00;
+    background-color: #1fff0f;
     padding: 2px 80px;
     border-radius: 40px;
+    transition: all 0.6s ease-in;
 }
 
 .reset-btn, .player-container {
@@ -74,7 +79,7 @@ main {
     background-color: rgba(68, 189, 38, 0.274);   
     margin-top: 20px; 
     box-shadow: 0 8px 16px 0 rgba(58, 175, 37, 0.2), 0 6px 20px 0 rgba(10, 63, 47, 0.19);
-    transition: all 1.5s ease-in;
+    transition: all 1s ease-in;
 }
       
 .reset-btn:hover {
@@ -88,18 +93,20 @@ main {
 
 .highlight-winners {
     background-color: rgb(3, 52, 3);
-    transition: all 1.5s ease-in;
+    transition: all 0.4s ease-in;
 }
 
 .alerts-transition {
-    transition: all 2s ease-in;
+    transition: all 1s ease-in;
 }
 
 .show-elements {
     opacity: 1;
-    transition: all 2s ease-in;
+    transition: all 1s ease-in;
 }
 
 footer {
     margin-top:15px;
 }
+
+

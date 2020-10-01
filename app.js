@@ -27,6 +27,7 @@ function handleClick(event) {
             playerOneBtn.classList.remove('active-player');
             playerTwoBtn.classList.add('active-player');
             event.target.textContent = "X";
+            event.target.classList.add('show-X-O');
             allClicks.push(boxNum); 
             playerOneClicks.push(boxNum);
             if (checkWinner(playerOneClicks).length === 3) {
@@ -95,9 +96,9 @@ function handleReset() {
 
 function handleWin(activePlayer) {
     handleAddWinComboBgColor();
-    setTimeout(handleHideElements, 2500)
-    setTimeout(handleHide, 4500); 
-    setTimeout(handleReset, 7000); 
+    setTimeout(handleHideElements, 800)
+    setTimeout(handleHide, 1500); 
+    setTimeout(handleReset, 4000); 
 }
 
 function handleHide() {
