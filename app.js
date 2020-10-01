@@ -92,7 +92,7 @@ function handleReset() {
 }
 
 function handleWin(activePlayer) {
-    handleHide();
+    setTimeout(handleHide, 1000); 
     setTimeout(handleReset, 2000); 
 }
 
