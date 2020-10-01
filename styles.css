@@ -63,7 +63,7 @@ main {
 }
 
 .inner-box:hover {
-    background-color: grey;
+    background-color: rgb(3, 52, 3);
 }
 
 .active-player {
