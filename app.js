@@ -76,6 +76,7 @@ function checkWinner(playerClicks) {
 }
 
 function handleReset() {
+    handleRemoveWinComboBgColor();
     activePlayer = "Player 1";
     playerOneClicks = [];
     playerTwoClicks = [];
@@ -92,14 +93,15 @@ function handleReset() {
 }
 
 function handleWin(activePlayer) {
-    setTimeout(handleHide, 1000); 
-    setTimeout(handleReset, 2000); 
+    handleAddWinComboBgColor();
+    setTimeout(handleHide, 1500); 
+    setTimeout(handleReset, 3000); 
 }
 
 function handleHide() {
     hideElements[0].classList.add('hide-elements');
     hideElements[1].classList.add('hide-elements');
-    if (allClicks.length === 9) {
+    if (allClicks.length === 9 && matchTracker.length !== 3) {
         userAlerts.textContent = `It's a draw. Restarting game...`;
     } else {
         userAlerts.textContent = `${activePlayer} wins. Restarting game...`;
@@ -131,4 +133,18 @@ function handleShowElements() {
     userAlerts.textContent = "";
     hideElements[0].classList.remove('hide-elements');
     hideElements[1].classList.remove('hide-elements');
+}
+
+function handleAddWinComboBgColor() {
+    if (matchTracker.length === 3) {
+        for (var i = 0; i < 3; i++) {
+            box[matchTracker[i]-1].classList.add('highlight-winners');
+        }    
+    }
+}
+
+function handleRemoveWinComboBgColor() {
+    for (var i = 0; i < 9; i++) {
+        box[i].classList.remove('highlight-winners');
+    }
 }

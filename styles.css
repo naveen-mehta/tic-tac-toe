@@ -82,3 +82,6 @@ main {
     opacity: 0;
 }
 
+.highlight-winners {
+    background-color: rgb(3, 52, 3);
+}

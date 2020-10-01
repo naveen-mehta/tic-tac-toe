@@ -66,5 +66,17 @@ handleWin function.
 - call first at every click
 - return if box is empty
 - call handleHide if not and pass on false as parameter
+- 
 - Modify handleHide 
   - if doubleClick argument is true    
+
+** handleWinComboBgColor **
+
+- add a class to switch background color for the winning combo
+- call this function from within the handleWin function before hiding elements and declaring the winner 
+
+- Logic (*)
+  - loop through the playerClicks array 
+//box[playerOneClicks[i]-1].classList.add('highlight-winners');
+
+
