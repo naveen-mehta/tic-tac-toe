@@ -1,3 +1,5 @@
+[Play the game](https://naveen-mehta.github.io/tic-tac-toe/) 
+
 # Introduction
 
     Tic Tac Toe is a simple game for 2 players. It is played on a 3 x 3 grid. 
@@ -16,9 +18,9 @@
         - Good to have features for future releases 
 
     ### Code 
-
-        - Document core requirements and good to have features for future releases 
+ 
         - Plan code keeping the below in mind:
+      - 
         1.  Scale easily when adding new features 
         2.  Easily readable / use comments wherever possible 
         3.  Divide code into functions, avoid hard coding
@@ -36,7 +38,8 @@
   
 # Installation
 
-    - No installation required. Just click on the below link to start playing. 
+    - No installation required. Just click on the below link to start playing.
+      [Play the game](https://naveen-mehta.github.io/tic-tac-toe/) 
 
 # Lessons 
 
