@@ -1,5 +1,7 @@
 [Play the game](https://naveen-mehta.github.io/tic-tac-toe/) 
 
+![](tic-tac-toe.mp4)
+
 ## Introduction
 
     Tic Tac Toe is a simple game for 2 players. It is played on a 3 x 3 grid. 
