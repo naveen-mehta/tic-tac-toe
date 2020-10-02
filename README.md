@@ -1,6 +1,6 @@
-[Play the game](https://naveen-mehta.github.io/tic-tac-toe/) 
+![](tic-tac-toe.gif)
 
-![](tic-tac-toe.mp4)
+[Play the game](https://naveen-mehta.github.io/tic-tac-toe/) 
 
 ## Introduction
 
