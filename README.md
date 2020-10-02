@@ -1,6 +1,7 @@
 # Introduction
 
-    Tic Tac Toe is a simple game for 2 players. It is played on a 3 x 3 grid. The first player to get 3 O's or X's lined up vertically, horizontally or diagonally, wins the game.
+    Tic Tac Toe is a simple game for 2 players. It is played on a 3 x 3 grid. 
+    The first player to get 3 O's or X's lined up vertically, horizontally or diagonally, wins the game.
 
 # Objectives 
 
