@@ -7,24 +7,24 @@
 
 ## Objectives 
 
-    **Design & Functionality**
+**Design & Functionality**
 
-        - Start with a MVP which has the basic logic sorted
-        - Keep the design simple and minimalistic, no fancy animations etc.
+    - Start with a MVP which has the basic logic sorted
+    - Keep the design simple and minimalistic, no fancy animations etc.
 
-    **Requirements** 
+**Requirements** 
 
-        - Document core (minimum) requirements 
-        - Good to have features for future releases 
+    - Document core (minimum) requirements 
+    - Good to have features for future releases 
 
-    **Code** 
- 
-        - Plan code keeping the below in mind:
+**Code** 
 
-        1.  Scale easily when adding new features 
-        2.  Easily readable / use comments wherever possible 
-        3.  Divide code into functions, avoid hard coding
-        4.  Use self-explanatory variable names    
+    - Plan code keeping the below in mind:
+
+    1.  Scale easily when adding new features 
+    2.  Easily readable / use comments wherever possible 
+    3.  Divide code into functions, avoid hard coding
+    4.  Use self-explanatory variable names    
 
 ## Technologies used
 
